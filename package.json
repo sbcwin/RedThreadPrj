@@ -1,0 +1,13 @@
+{
+  "name": "redthread",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @redthread/web run dev",
+    "build:web": "npm --workspace @redthread/web run build",
+    "lint:web": "npm --workspace @redthread/web run lint"
+  }
+}
+
