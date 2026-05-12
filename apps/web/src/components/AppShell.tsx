@@ -7,6 +7,7 @@ import { FEATURES, featureIdFromPath } from "@/lib/features";
 import { getUnlockedFeatures, unlockFeature } from "@/lib/featureProgress";
 import { BottomTabs } from "@/components/BottomTabs";
 import { FullMenuSheet } from "@/components/FullMenuSheet";
+import { UserProfileProvider } from "@/contexts/UserProfileContext";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -32,22 +33,24 @@ export function AppShell({ children }: { children: ReactNode }) {
   );
 
   return (
-    <div className="min-h-dvh bg-white">
-      {children}
+    <UserProfileProvider>
+      <div className="min-h-dvh bg-white">
+        {children}
 
-      <BottomTabs
-        tabs={tabFeatures}
-        unlocked={unlocked}
-        onOpenMenu={() => setIsMenuOpen(true)}
-      />
+        <BottomTabs
+          tabs={tabFeatures}
+          unlocked={unlocked}
+          onOpenMenu={() => setIsMenuOpen(true)}
+        />
 
-      <FullMenuSheet
-        open={isMenuOpen}
-        onClose={() => setIsMenuOpen(false)}
-        features={FEATURES}
-        unlocked={unlocked}
-      />
-    </div>
+        <FullMenuSheet
+          open={isMenuOpen}
+          onClose={() => setIsMenuOpen(false)}
+          features={FEATURES}
+          unlocked={unlocked}
+        />
+      </div>
+    </UserProfileProvider>
   );
 }
 

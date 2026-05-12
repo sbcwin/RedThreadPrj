@@ -8,6 +8,8 @@
     "dev:web": "npm --workspace @redthread/web run dev",
     "build:web": "npm --workspace @redthread/web run build",
     "lint:web": "npm --workspace @redthread/web run lint"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1"
   }
 }
-

@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev:web (Windows, npm.cmd)",
+      "type": "shell",
+      "command": "npm.cmd run dev:web",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": {
+          "executable": "C:\\Windows\\System32\\cmd.exe",
+          "args": ["/d", "/c"]
+        }
+      },
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
